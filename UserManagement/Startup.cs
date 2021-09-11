@@ -44,7 +44,7 @@ namespace UserManagement
                 .AddEntityFrameworkStores<ApplicationDbContext>()
                 .AddUserManager<MyUserManager>();
 
-            services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            services.AddMvc().AddMvcOptions(options => options.EnableEndpointRouting = false);
 
             // These are the claims/permissions for user authorization
             services.AddAuthorization(options =>
